@@ -1,0 +1,98 @@
+---
+title: Team
+link: team
+layout: default
+main-team:
+- name: Alexandra Silva
+  title: Senior Lecturer
+  affiliation: University College London
+  picture: alex.jpg
+  webpage: http://www.alexandrasilva.org
+- name: Matteo Sammartino
+  title: Research Associate
+  affiliation: Royal Holloway University of London, University College London
+  webpage: https://matteosammartino.com/
+  picture: matteo.jpg
+- name: Gerco van Heerdt
+  title: Research Fellow
+  affiliation: University College London
+  picture: gerco.jpg
+  webpage: http://gerco.me/
+- name: Jurriaan Rot
+  title: Assistant Professor
+  affiliation: Radboud University
+  picture: jurriaan.jpg
+  webpage: http://jurriaan.me/
+- name: Joshua Moerman
+  title: Postdoctoral Researcher
+  affiliation: Radboud University
+  picture: joshua.jpg
+  webpage: http://joshuamoerman.nl
+- name: Maverick Chardet
+  title: Master's Student
+  affiliation: ENS Lyon
+  picture: maverick.jpg
+
+collaborators:
+- name: Clemens Kupke
+  title: Lecturer
+  affiliation: University of Strathclyde
+  picture: clemens.jpg
+  webpage: https://personal.cis.strath.ac.uk/clemens.kupke/
+- name: Bartek Klin
+  title: Professor
+  affiliation: Warsaw University
+  picture: bartek.jpg
+  webpage: https://www.mimuw.edu.pl/~klin/
+- name: Micha&#322 Szynwelski
+  title: Ph.D. Student
+  affiliation: Warsaw University
+  picture: michal.jpg
+  webpage: https://www.mimuw.edu.pl/~szynwelski/
+- name: Tobias Kappé
+  title: Postdoctoral Associate
+  affiliation: Cornell University
+  picture: tobias.jpg
+  webpage: https://tobias.kap.pe
+---
+<h2>Main team</h2>
+
+<div class="team-div">
+{% for member in page.main-team %}
+    {% if member.webpage %}
+    <a href="{{ member.webpage }}" target="_blank">
+    {% endif %}
+    <div class="panel panel-info team-panel col">
+        <div class="panel-heading">{{ member.name }}</div>
+        <div class="panel-body">
+          <img src="images/team/{{ member.picture }}" class="img-responsive center-block">
+        </div>
+        <div class="panel-footer">
+          <span class="member-title">{{ member.title }}</span>
+          <span class="member-affiliation">{{ member.affiliation }}</span>
+        </div>
+    </div>
+    {% if member.webpage %}
+  </a>
+  {% endif %}
+{% endfor %}
+</div>
+
+<h2>Collaborators</h2>
+
+<div class="team-div">
+{% for member in page.collaborators %}
+    <a href="{{ member.webpage }}">
+    <div class="panel panel-info team-panel col">
+        <div class="panel-heading">{{ member.name }}</div>
+        <div class="panel-body">
+          <img src="images/team/{{ member.picture }}" class="img-responsive center-block">
+        </div>
+        <div class="panel-footer">
+          <span class="member-title">{{ member.title }}</span>
+          <span class="member-affiliation">{{ member.affiliation }}</span>
+        </div>
+    </div>
+  </a>
+{% endfor %}
+</div>

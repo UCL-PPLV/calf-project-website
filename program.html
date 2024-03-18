@@ -1,0 +1,61 @@
+---
+layout: default
+title: Program
+link: program
+days:
+- date: Monday, June 5th
+  sessions:
+  - type: special
+    talks:
+    - time: 9:00-10:00
+      speaker: Tinky Winky
+      title: Over the hills and far away
+    - time: 10:00-11:00
+      speaker: Dipsy
+      title: Teletubbies come to play
+    - time: 11:00-12:00
+      speaker: La La & Po
+      title: Time for Teletubbies
+    - time: 12:00-13:00
+      break: lunch
+  - type: contributed
+    talks:
+      - time: 13:00-14:00
+        speaker: Leonardo
+        title: Heroes in a Half Shell
+      - time: 14:00-15:00
+        speaker: Donatello
+        title: Shell Shocked Pizza Kings
+      - time: 15:00-15:30
+        break: tea
+      - time: 15:30-16:30
+        speaker: Rafael
+        title: Good guys win, bad guys lose!
+      - time: 16:30-17:30
+        speaker: Michelangelo
+        title: Turtle Power
+---
+{% for day in page.days %}
+<h3>{{ day.date }}</h3>
+{% for session in day.sessions %}
+<h4>{{ session.type | capitalize }} session</h4>
+<table class="program">
+    <col width="15%" />
+    <col width="20%" />
+    <tbody>
+        {% for talk in session.talks %}
+        <tr>
+            {% if talk.break != nil %}
+            <td>{{ talk.time }}</td>
+            <td colspan="2" class="break">{{ talk.break | capitalize }} break</td>
+            {% else %}
+            <td>{{ talk.time }}</td>
+            <td>{{ talk.speaker }}</td>
+            <td>{{ talk.title }}</td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endfor %}
+{% endfor %}

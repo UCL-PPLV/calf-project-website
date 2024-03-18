@@ -1,0 +1,71 @@
+---
+title: Talks
+link: talks
+layout: default
+
+talks:
+- id: PPLV20
+  year: 2020
+  title: "Learning Generalised Tree Automata"
+  where: "PPLV seminar cycle, UCL, Online"
+  speaker: "Gerco van Heerdt"
+  slides: tree-pplv.pdf
+  abstract: "Automata learning is a technique used to automatically construct an automaton model from queries. One popular automata learning algorithm is L*, which learns the minimal DFA for a regular language. In this talk we will generalise L* using a categorical view on automata, by which we obtain an algorithm to learn automata of which transitions are algebras for a functor. We consider arbitrary quotiented polynomial functors in Set and thus extend tree automata learning algorithms proposed in earlier literature, which cover only polynomial functors."
+- id: Radboud20
+  year: 2020
+  title: "Learning Weighted Automata over Principal Ideal Domains"
+  where: "Software Science Seminar, Radboud University Nijmegen, Online"
+  speaker: "Gerco van Heerdt"
+  slides: radboud-weighted.pdf
+  abstract: "In this talk we discuss L*-based automata learning algorithms for weighted automata over a semiring. We provide a general adaptation of the algorithm and show that it works correctly when the semiring is a principal ideal domain. We also show that termination fails in general for an arbitrary semiring, in particular the natural numbers."
+- id: PPLV17
+  year: 2017
+  title: "CALF: Categorical Automata Learning Framework"
+  where: "PPLV seminar cycle, UCL"
+  speaker: "Gerco van Heerdt"
+  slides: CALF-PPLV.pdf
+  abstract: "Automata learning is a technique that has successfully been applied in verification, with the automaton type varying depending on the application domain. Adaptations of automata learning algorithms for increasingly complex types of automata have to be developed from scratch because there was no abstract theory offering guidelines. This makes it hard to devise such algorithms, and it obscures their correctness proofs. In the first part of this talk, I recall the details of active learning algorithms for DFAs. The second part then introduces our category-theoretic formalism that provides an appropriately abstract foundation for studying automata learning. I will also discuss formal relations between algorithms for learning, testing, and minimisation within our framework."
+- id: RISE17
+  year: 2017
+  title: "Learning Nominal Automata (extended version of POPL'17 talk)"
+  where: "RISE seminar cycle, IST Austria"
+  speaker: "Matteo Sammartino"
+  slides: RISE-slides.pdf
+  abstract: "Automata learning, or regular inference, is a widely used technique for creating an automaton model from observations. In recent years, it has been successfully applied to the verification of security protocols, hardware, and software systems. The original algorithm L* works for deterministic finite automata, and is only capable of learning control-flow models.
+
+  In this talk I will present an extension of L* to learn combined control/data-flow models in the form of nominal automata, which are acceptors of languages over infinite (structured) alphabets. After recalling L*, I will briefly present the theory of nominal sets. Then I will show how this theory enables extending L* to infinite alphabets in a seamless way, with almost no modifications to the original code. Finally, I will give a short demo of a tool based on this work, currently being developed at UCL."
+---
+{% assign sorted-talks = page.talks | sort:'year' | reverse %}
+{% assign grouped-talks = sorted-talks | group_by: 'year' %}
+
+<div class="container-fluid">
+    {% for group in grouped-talks %}
+    <div class="row paper-year-row">
+        <div class="col-lg-2">
+            <h2 class="text-center">{{ group.name }}</h2>
+        </div>
+        <div class="col-lg-10">
+          {% for talk in group.items %}
+          <div class="paper">
+            <div class="paper-title">
+              {{ talk.title }}
+              <button type="button" class="btn btn-info btn-xs" data-toggle="collapse" data-target="#abstract-{{ talk.id }}">Show abstract</button>
+              {% if talk.download %}
+              <a href="/slides/{{ talk.download }}" data-toggle="tooltip" title="Download">
+              <span class="glyphicon glyphicon-download"></span></a>
+              {% endif %}
+              {% if talk.slides %}
+              <a href="/slides/{{ talk.slides }}" data-toggle="tooltip" title="Slides"><span class="glyphicon glyphicon-blackboard"></span></a>
+              {% endif %}
+            </div>
+            <div id="abstract-{{ talk.id }}" class="collapse paper-abstract">
+              {{ talk.abstract }}
+            </div>
+            <div class="paper-authors">{{ talk.speaker }}</div>
+            <div class="paper-where">{{ talk.where }}</div>
+          </div>
+          {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+</div>

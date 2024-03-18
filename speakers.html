@@ -1,0 +1,58 @@
+---
+layout: default
+title: Speakers
+link: speakers
+invited:
+- name: Big Bird
+  affiliation: Sesame University
+  picture: bigbird
+  abstract: Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.
+- name: Cookie Monster
+  affiliation: Cookie Polytechnic
+  picture: cookiemonster
+  abstract: Cake carrot cake danish pastry ice cream. Cotton candy tootsie roll candy canes chocolate danish. Cookie donut apple pie donut cake chocolate bar macaroon gingerbread topping. Tootsie roll pie wafer dragée gingerbread brownie toffee.
+- name: Elmo
+  affiliation: State University of Greater Sesame
+  picture: elmo
+  abstract: Cup single shot cappuccino, aroma variety cup rich skinny. Turkish iced mocha kopi-luwak, body fair trade grinder flavour roast rich blue mountain cream. Qui cortado, cultivar, aftertaste, grounds con panna aftertaste sit mazagran extraction as shop.
+tutorials:
+- name: Recess
+  speakers:
+  - name: Dora Marquez
+    affiliation: Mexico City University
+    picture: dora
+    abstract: Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
+  - name: The Doctor
+    affiliation: Gallifrey Institute of Time Travel
+    picture: doctor
+    abstract: There was a war. A Time War. The Last Great Time War. My people fought a race called the Daleks, for the sake of all creation. And they lost. We lost. Everyone lost. They're all gone now. My family. My friends. Even that sky. People assume that time is a strict progression of cause-and-effect... 
+---
+<h3>Invited speakers</h3>
+{% for speaker in page.invited %}
+<div class="speaker">
+    <div class="photograph">
+        <img src="images/speakers/{{ speaker.picture }}.jpg" />
+    </div>
+    <div class="speaker-info">
+        <span class="speaker-name">{{ speaker.name }}</span>
+        <span class="speaker-affiliation">{{ speaker.affiliation }}</span>
+        <span class="speaker-abstract">{{ speaker.abstract }}</span>
+    </div>
+</div>
+{% endfor %}
+<h3>Tutorial speakers</h3>
+{% for track in page.tutorials %}
+<h4>{{ track.name }}</h4>
+{% for speaker in track.speakers %}
+<div class="speaker">
+    <div class="photograph">
+        <img src="images/speakers/{{ speaker.picture }}.jpg" />
+    </div>
+    <div class="speaker-info">
+        <span class="speaker-name">{{ speaker.name }}</span>
+        <span class="speaker-affiliation">{{ speaker.affiliation }}</span>
+        <span class="speaker-abstract">{{ speaker.abstract }}</span>
+    </div>
+</div>
+{% endfor %}
+{% endfor %}

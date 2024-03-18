@@ -1,0 +1,400 @@
+
+header {
+  text-align: center;
+  background-color: #fff;
+  color: black;
+  font-size: 20pt;
+}
+
+
+html,body{
+    height:100%;
+    margin:0;
+}
+
+
+#main{
+  height: auto;
+  min-height: 100%;
+  background: rgb(238,238,238);
+}
+
+.content .aside-1 .aside-2 {
+  position: relative;
+  z-index: 0;
+}
+
+.content {
+  max-width: 600pt;
+  width:100%;
+  padding: 20pt;
+  font-size: 13pt;
+  background: white;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+#title-container {
+  padding: 20pt;
+}
+
+#title-div {
+  margin: 0 auto;
+  display: table;
+}
+#calf-logo-div {
+  display: table-cell;
+  vertical-align: middle;
+}
+#calf-logo-img {
+    height: 80pt;
+}
+#calf-acronym-cont-div {
+  text-align: center;
+  display: table-cell;
+  padding-left: 10pt;
+  padding-right: 20pt;
+  vertical-align: middle;
+}
+
+#calf-acronym-div, #calf-image-div {
+    display: inline-block;
+}
+
+#calf-desc-div {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  max-width: 500pt;
+  font-size: 18pt;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 560pt) {
+    #calf-desc-div {
+      font-size: 12pt;
+    }
+}
+
+@media only screen and (max-width: 400pt) {
+    #calf-desc-div {
+      font-size: 8pt;
+    }
+}
+
+@media only screen and (max-width: 360pt) {
+    #calf-desc-div {
+      display: none;
+    }
+}
+
+#calf-acronym-div > p {
+  font-size: 12pt;
+  font-variant: small-caps;
+  padding: 0pt;
+  margin: 0pt;
+  text-align: left;
+  line-height: 15pt;
+}
+
+
+#calf-acronym-div > p::first-letter {
+  font-size: 20pt;
+}
+
+
+
+
+#nav-div{
+  /* background-color: rgb(76,76,76);*/
+  background-color: rgb(68,61,111);
+  padding-top: 5pt;
+  padding-bottom: 5pt;
+  font-variant: small-caps;
+  font-size: 15pt;
+  box-shadow: 0px 10px 10px -10px #111;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  position: relative;
+  z-index: 1;
+}
+
+#nav-menu-div {
+  width: 600pt;
+}
+
+
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+    color: #ffffff !important;
+    background-color: rgb(98,91,141) !important;
+}
+.nav-pills>li>a {
+    color: #ffffff;
+}
+.nav-pills>li>a:hover, .nav-pills>li>a:focus {
+    background-color: rgb(88,81,131) !important;
+}
+
+#side-menu {
+  margin-top: 20pt;
+  margin-right: 20pt;
+  float: right;
+  font-size: 11pt;
+}
+
+.team-div{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+
+
+.team-panel {
+  margin: 10pt;
+}
+
+
+.team-panel {
+  width: 150pt;
+  height: auto;
+}
+
+.team-panel .panel-heading {
+  text-align: center;
+}
+
+.team-panel > .panel-body {
+  padding: 0px;
+}
+.team-panel > .panel-body > img {
+  width: auto;
+  height: 100px;
+}
+.team-panel > .panel-footer {
+  text-align: center;
+}
+
+
+
+.paper {
+  margin: 10pt 0 10pt 0;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgb(235,235,235);
+}
+
+.paper-year-row{
+  margin: auto;
+}
+
+.paper-title {
+  font-weight: bold;
+  margin-bottom: 5pt;
+}
+
+.paper-authors {
+  margin-top: 5pt;
+  font-size: 12pt;
+}
+
+.paper-where {
+  margin-top: 10pt;
+  font-size: 12pt;
+}
+
+.paper-abstract {
+  margin: 0pt;
+  font-size: 11pt;
+  font-style: italic;
+}
+
+
+.ref {
+  font-size: 11pt;
+}
+
+#references-section > ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+a.cite{
+  vertical-align: super;
+  font-size: smaller;
+}
+
+a.cite::before{
+  content: "[";
+}
+
+a.cite::after{
+  content: "]";
+}
+
+
+
+.team {
+    width: 200px;
+    font-size: 11pt;
+}
+
+.member{
+    display: table-row;
+}
+
+.photograph {
+    display: table-cell;
+    padding-bottom: 10px;
+}
+
+.photograph > img {
+    width: 150px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.member-title {
+  display: block;
+  text-align: center;
+  font-size: 10pt;
+}
+
+.member-affiliation {
+    display: block;
+    text-align: center;
+    font-style: italic;
+    padding-bottom: 5px;
+    font-size: 10pt;
+}
+
+div[class^="calf-points-div-"] {
+  display: table;
+  width: 100%;
+  /**height: 100pt;*/
+  margin: 20pt 0pt 20pt 0pt;
+  box-shadow: 2px 2px 2px 0px rgb(200,200,200);
+  border-width: 1.5px;
+  border-style: solid;
+}
+
+
+.calf-points-div-1 {
+  border-color: #73AD21;
+}
+
+.calf-points-div-2 {
+  border-color: #4C2C73;
+}
+
+.calf-points-div-3 {
+  border-color: #4C2C73;
+}
+
+.calf-point {
+  color: white;
+  padding: 0 10pt 0 10pt;
+  display: table-cell;
+  min-width: 25%;
+  vertical-align: middle;
+  font-size: 20pt;
+  font-weight: 300;
+}
+
+.calf-points-div-1 .calf-point {
+  background-color: #73AD21; /*#FF7F00;*/
+}
+
+.calf-points-div-2 .calf-point {
+  background-color: #4C2C73; /*#4C2C73;*/
+}
+
+.calf-points-div-3 .calf-point {
+  background-color: #4C2C73; /*rgb(0,93,215);*/
+}
+
+.calf-point-explanation {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 10pt;
+}
+
+@media only screen and (max-width: 500pt) {
+    div[class^="calf-points-div-"] {
+      display: block;
+    }
+    .calf-point-explanation {
+      display: block;
+    }
+}
+
+.tool-div {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgb(235,235,235);
+}
+
+.tool-title {
+  margin: 5pt 0 10pt 0;
+  font-weight: bold;
+  font-size: 15pt;
+  border-bottom: 1px solid #919699;
+  padding-bottom: 1pt;
+}
+
+.news-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0 20px 0;
+}
+
+.news-date {
+  background: rgb(3,187,122);
+  color: white;
+  vertical-align: middle;
+}
+
+.news-details {
+  font-weight: light;
+}
+.news-title {
+  font-size: 13pt;
+}
+.news-text {
+  font-size: 11pt;
+}
+
+.news-link{
+  font-size: 11pt;
+}
+/*
+.img-centered {
+  padding: 20pt 20pt 20pt 20pt;
+  width: 70%;
+}
+
+.observation-table {
+  margin: auto;
+  border-collapse: collapse;
+  width: 50%;
+}
+
+.observation-table td {
+    text-align: center;
+}
+
+.observation-table tr:nth-child(even) td:nth-child(n+2){
+  background-color: #f2f2f2
+}
+
+#tab1 {
+  width: 50%;
+  padding: 20pt 20pt 20pt 20pt;
+}
+*/

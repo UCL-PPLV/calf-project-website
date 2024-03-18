@@ -1,0 +1,110 @@
+---
+layout: default
+title: About
+link: about
+---
+<p>
+Automata are a well established computational abstraction with a wide range of applications, including modelling and verification of (security) protocols, hardware, and software systems.
+</p>
+
+<p>
+In an ideal world, a model would be available before a system or protocol is deployed in order to provide ample opportunity for checking important properties that must hold and only then the actual system would be synthesized from the verified model.
+</p>
+
+<p>
+Unfortunately, this is not at all the reality: systems and protocols are developed and coded in short spans of time and if mistakes occur they are most likely found after deployment.
+</p>
+
+<p>
+In this context, it has become popular to <b>infer</b> or <b>learn</b> an automaton model from a given system, just by observing its behaviour or response to certain queries. The learned automaton can then be used to ensure the system is complying to desired properties or to detect bugs and design possible fixes.
+</p>
+
+<div class="calf-points-div-1">
+  <div class="calf-point">
+  Modular design and development
+  </div>
+  <div class="calf-point-explanation">
+    CALF allows for the modular design and development of automata learning algorithms. In order to do so, it relies on general mathematical frameworks, such as <b>category-theory</b> and the <b>theory of nominal sets</b>. This ensures applicability to a broad class of systems.
+  </div>
+</div>
+
+<div class="calf-points-div-2">
+  <div class="calf-point">
+  Correctness-by-construction
+  </div>
+  <div class="calf-point-explanation">
+    CALF facilitates correctness proofs of automata learning algorithms. It provides a general and principled account of crucial aspects of algorithms, such as data structures and their properties.
+  </div>
+</div>
+
+<!--
+<div class="calf-points-div-3">
+    <div class="calf-point">
+    Tools
+    </div>
+    <div class="calf-point-explanation">
+      CALF facilitates the implementation of tools
+    </div>
+</div>
+-->
+
+<!--
+<section id="automata-learning-section">
+<h2>Automata Learning</h2>
+<p>
+Automata learning, or regular inference, is a widely used technique for creating an automaton model from observations. The original algorithm L*<a href="#Ang87-ref" class="cite">1</a>, by Dana Angluin, works for deterministic finite automata, but since then has been extended to other types of automata<a href="#AartsV10-ref" class="cite">2</a> <a href="#AngluinC97-ref" class="cite">3</a> <a href="#Niese03-ref" class="cite">4</a>, including Mealy machines and I/O automata, and even a special class of context-free grammars.
+</p>
+
+<h3>L* algorithm</h3>
+<p>
+L* provides a procedure to learn the <b>minimal DFA</b> accepting a certain (unknown) language $\mathcal{L}$. The algorithm assumes the existence of a <b>teacher</b>, who knows $\mathcal{L}$. The learner can ask the teacher two kinds of queries:
+<ul>
+  <li><b>Membership queries</b>, consisting of a single word $w \in A^\star$, to which the teacher will reply whether $w \in \mathcal{L}$ or not.
+  </li>
+  <li><b>Equivalence queries</b>, consisting of a hypothesis DFA $H$, to which the teacher replies <b>yes</b> if $\mathcal{L}(H) = \mathcal{L}$, and </b>no</b> otherwise, providing a counterexample $w$ which is either in $\mathcal{L}$ but not in $\mathcal{L}(H)$ or viceversa.</li>
+</ul>
+
+<img src="images/lstar.svg" class="center-block img-centered">
+</p>
+
+<p>
+The learning algorithm works by incrementally building an <b>observation table</b>, which at each stage contains partial information about the language $\mathcal{L}$. The algorithm is able to fill the table with membership queries.
+As an example, consider the following table over the alphabet $A = \{a,b\}$.
+
+<img src="images/tab1.svg" class="center-block" id="tab1">
+
+This table indicates that $\mathcal{L}$ contains at least $aa$ and definitely does not contain the words $\epsilon, a, b, ba, baa, aaa$. Since $row$ is fully determined
+by the language $\mathcal{L}$, we will from now on refer to an
+observation table as a pair $(S,E)$, leaving the language
+$\lang$ implicit.
+
+
+
+
+</section>
+-->
+<!--
+<section id="calf-section">
+<h2>CALF</h2>
+Real-world systems are increasingly complex and diverse.
+CALF supports the <mark>modular design and development</mark> of automata learning algorithms, with  <mark>correctness-by-construction</mark> guarantees.
+</section>
+-->
+
+<!--
+<hr>
+
+<section id="references-section">
+<h3>References</h3>
+<ul>
+<li id="Ang87-ref" class="ref">1. Dana Angluin. Learning regular sets from queries and counterexamples. Inf. Comput., 75(2):87–106, 1987.</li>
+
+<li id="AartsV10-ref" class="ref">2. Fides Aarts and Frits W. Vaandrager. Learning I/O automata. In CONCUR, pages 71–85, 2010.</li>
+
+<li id="AngluinC97-ref" class="ref">3. Dana Angluin and Miklo Csuros. Learning markov chains with variable memory length from noisy output. In COLT, pages 298–308, 1997</li>
+
+<li id="Niese03-ref" class="ref">4. Oliver Niese. An integrated approach to testing complex systems. PhD thesis, Universitat Dortmund, 2003.
+</li>
+</ul>
+</section>
+-->

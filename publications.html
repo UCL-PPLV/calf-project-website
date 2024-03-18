@@ -1,0 +1,155 @@
+---
+title: Publications
+link: publications
+layout: default
+
+pubs:
+- id: GercoPhdThesis
+  title: "CALF: Categorical Automata Learning Framework"
+  year: 2020
+  authors: Gerco van Heerdt
+  where: PhD Thesis, University College London
+  download: /publications/Gerco-thesis_final_ucl.pdf
+  slides: viva.pdf
+  abstract: "Automata learning is a popular technique used to automatically construct an automaton model from queries, and much research has gone into devising specific adaptations of such algorithms for different types of automata. This thesis presents a unifying approach to many existing algorithms using category theory, which eases correctness proofs and guides the design of new automata learning algorithms. We provide a categorical automata learning framework—CALF—that at its core includes an abstract version of the popular L* algorithm. Using this abstract algorithm we derive several concrete ones.
+  We instantiate the framework to a large class of Set functors, by which we recover for the
+  first time a tree automata learning algorithm from an abstract framework, which moreover is
+  the first to cover also algebras of quotiented polynomial functors. We further develop a general
+  algorithm to learn weighted automata over a semiring. On the one hand, we identify a class
+  of semirings, principal ideal domains, for which this algorithm terminates and for which no
+  learning algorithm previously existed; on the other hand, we show that it does not terminate
+  over the natural numbers. Finally, we develop an algorithm to learn automata with side-effects
+  determined by a monad and provide several optimisations, as well as an implementation with
+  experimental evaluation. This allows us to improve existing algorithms and opens the door
+  to learning a wide range of automata."
+- id: SideEffects
+  year: 2020
+  title: "Learning Automata with Side-Effects"
+  authors: Gerco van Heerdt, Matteo Sammartino and Alexandra Silva
+  where: CMCS
+  download: https://link.springer.com/chapter/10.1007/978-3-030-57201-3_5
+  slides: learning-with-side-effects.pdf
+  abstract: "Automata learning has been successfully applied in the verification of hardware and software. The size of the automaton model learned is a bottleneck for scalability, and hence optimizations that enable learning of compact representations are important. This paper exploits monads, both as a mathematical structure and a programming construct, to design and prove correct a wide class of such optimizations. Monads enable the development of a new learning algorithm and correctness proofs, building upon a general framework for automata learning based on category theory. The new algorithm is parametric on a monad, which provides a rich algebraic structure to capture non-determinism and other side-effects. We show that this allows us to uniformly capture existing algorithms, develop new ones, and add optimizations."
+- id: PID
+  year: 2020
+  title: "Learning Weighted Automata over Principal Ideal Domains"
+  authors: Gerco van Heerdt, Clemens Kupke, Jurriaan Rot and Alexandra Silva
+  where: FoSSaCS
+  download: https://link.springer.com/content/pdf/10.1007%2F978-3-030-45231-5_31.pdf
+  abstract: "In this paper, we study active learning algorithms for weighted automata over a semiring. We show that a variant of Angluin's seminal L* algorithm works when the semiring is a principal ideal domain, but not for general semirings such as the natural numbers."
+- id: TreeLearning
+  year: 2020
+  title: "A Categorical Framework for Learning Generalised Tree Automata"
+  authors: Gerco van Heerdt, Tobias Kappé, Jurriaan Rot, Matteo Sammartino and Alexandra Silva
+  where: arXiv 2001.05786
+  download: https://arxiv.org/pdf/2001.05786.pdf
+  abstract: "Automata learning is a popular technique used to automatically construct an automaton model from queries. Much research went into devising ad hoc adaptations of algorithms for different types of automata. The CALF project seeks to unify these using category theory in order to ease correctness proofs and guide the design of new algorithms. In this paper, we extend CALF to cover learning of algebraic structures that may not have a coalgebraic presentation. Furthermore, we provide a detailed algorithmic account of an abstract version of the popular L* algorithm, which was missing from CALF. We instantiate the abstract theory to a large class of Set functors, by which we recover for the first time practical tree automata learning algorithms from an abstract framework and at the same time obtain new algorithms to learn algebras of quotiented polynomial functors."
+- id: Succinct
+  year: 2019
+  title: "A (co)algebraic theory of succinct automata"
+  authors: Gerco van Heerdt, Joshua Moerman, Matteo Sammartino and Alexandra Silva
+  where: JLAMP
+  download: https://discovery.ucl.ac.uk/id/eprint/10074294/7/Sammartino_A%20%28co%29algebraic%20theory%20of%20succinct%20automata_AAM.pdf
+  abstract: "The classical subset construction for non-deterministic automata can be generalized to other side-effects captured by a monad. The key insight is that both the state space of the determinized automaton and its semantics—languages over an alphabet—have a common algebraic structure: they are Eilenberg-Moore algebras for the powersetgen monad. In this paper we study the reverse question to determinization. We will present a construction to associate succinct automata to languages based on different algebraic structures. For instance, for classical regular languages the construction will transform a deterministic automaton into a non-deterministic one, where the states represent the join-irreducibles of the language accepted by a (potentially) larger deterministic automaton. Other examples will yield alternating automata, automata with symmetries, CABA-structured automata, and weighted automata."
+- id: Tree
+  year: 2019
+  title: "Tree Automata as Algebras: Minimisation and Determinisation"
+  authors: Gerco van Heerdt, Tobias Kappé, Jurriaan Rot, Matteo Sammartino and Alexandra Silva
+  where: CALCO
+  download: https://discovery.ucl.ac.uk/id/eprint/10088222/1/LIPIcs-CALCO-2019-6.pdf
+  slides: tree-calco.pdf
+  abstract: "We study a categorical generalisation of tree automata, as algebras for a fixed endofunctor endowed with initial and final states. Under mild assumptions about the base category, we present a general minimisation algorithm for these automata. We then build upon and extend an existing generalisation of the Nerode equivalence to a categorical setting and relate it to the existence of minimal automata. Finally, we show that generalised types of side-effects, such as non-determinism, can be captured by this categorical framework, leading to a general determinisation procedure."
+- id: LTC
+  year: 2018
+  title: "Learning to Coordinate"	
+  authors: Gerco van Heerdt, Bart Jacobs, Tobias Kappé and Alexandra Silva
+  where: It's All About Coordination 2018
+  download: /publications/ltc.pdf
+  abstract: "Reo is a visual language of connectors that originated in component-based software engineering. It is a flexible and intuitive language yet powerful and capable of expressing complex patterns of composition. The intricacies of the language resulted in many semantic models proposed for Reo including several automata-based ones. In this paper, we show how to generalize a known active automata learning algorithm—Angluin’s L*—to Reo automata. We use recent categorical insights on Angluin’s original algorithm to devise this generalization, which turns out to require a change of base category."
+- id: CALF-LiVe
+  title: "CALF: Categorical Automata Learning Framework (extended abstract)"
+  year: 2017
+  authors: Gerco van Heerdt, Matteo Sammartino and Alexandra Silva
+  where: LiVe (Learning in Verification)
+  download: /publications/LiVe17.pdf
+  slides: LiVe-slides.pdf
+  abstract: "Adaptations of automata learning algorithms for increas- ingly complex types of automata have to be developed from scratch because there is no abstract theory in place to guide the process. This makes it hard to devise such algorithms, and it obscures their correct- ness proofs. We introduce CALF, a simple category theoretical frame- work that provides an appropriately abstract foundation for studying automata learning and furthermore establishes formal relations between algorithms for learning, testing, and minimization."
+- id: CALF
+  title: "CALF: Categorical Automata Learning Framework"
+  year: 2017
+  authors: Gerco van Heerdt, Matteo Sammartino and Alexandra Silva
+  where: CSL
+  download: /publications/calf.pdf
+  slides: csl17-slides.pdf
+  abstract: "Automata learning is a technique that has successfully been applied in verification, with the automaton type varying depending on the application domain.
+	Adaptations of automata learning algorithms for increasingly complex types of automata have to be developed from scratch because there was no abstract theory offering guidelines.
+	This makes it hard to devise such algorithms, and it obscures their correctness proofs.
+	We introduce a simple category-theoretic formalism that provides an appropriately abstract foundation for studying automata learning.
+	Furthermore, our framework establishes formal relations between algorithms for learning, testing, and minimization.
+	We illustrate its generality with two examples: deterministic and weighted automata."
+- id: SideEffects-arxiv
+  year: 2017
+  title: "Optimizing Automata Learning via Monads"
+  authors: Gerco van Heerdt, Matteo Sammartino and Alexandra Silva
+  where: arXiv 1704.08055
+  download: /publications/side-effects.pdf
+  abstract: "Automata learning has been successfully applied in the verification of hardware and software. The size of the automaton model learned is a bottleneck for scalability, and hence optimizations that enable learning of compact representations are important. This paper exploits monads, both as a mathematical structure and a programming construct, to design, prove correct, and implement a wide class of such optimizations. The former perspective on monads allows us to develop a new algorithm and accompanying correctness proofs, building upon a general framework for automata learning based on category theory. The new algorithm is parametric on a monad, which provides a rich algebraic structure to capture non-determinism and other side-effects. We show that our approach allows us to uniformly capture existing algorithms, develop new ones, and add optimizations. The latter perspective allows us to effortlessly translate the theory into practice: we provide a Haskell library implementing our general framework, and we show experimental results for two specific instances: non-deterministic and weighted automata."
+- id: CoalgebraicLearning
+  title: "Automata Learning: a Categorical Perspective"
+  year: 2014
+  authors: Bart Jacobs and Alexandra Silva
+  where: Horizons of the Mind
+  download: /publications/prakash.pdf
+  slides: prakash-slides.pdf
+  abstract: "Automata learning is a known technique to infer a finite state machine from a set of observations. In this paper, we revisit Angluin’s original algorithm from a categorical perspective. This abstract view on the main ingredients of the algorithm lays a uniform framework to derive algorithms for other types of atomata. We show a straightforward generalization to Moore and Mealy machines, which yields an algorithm already known in the literature, and we discuss generalizations to other types of automata, including weighted automata."
+- id: LearningNominalAutomata
+  title: Learning Nominal Automata
+  year: 2017
+  authors: Joshua Moerman, Matteo Sammartino, Alexandra Silva, Micha&#322 Szynwelsky, Bartek Klin
+  where: POPL
+  download: /publications/POPL17.pdf
+  slides: POPL17-slides.pdf
+  abstract: We present an Angluin-style algorithm to learn nominal automata, which are acceptors of languages over infinite (structured) alphabets. The abstract approach we take allows us to seamlessly extend known variations of the algorithm to this new setting. In particular we can learn a subclass of nominal non-deterministic automata. An implementation using a recently developed Haskell library for nominal computation is provided for preliminary experiments.
+- id: GercoThesis
+  title: "An Abstract Automata Learning Framework"
+  year: 2016
+  authors: Gerco van Heerdt
+  where: Master Thesis, Radboud University Nijmegen
+  download: /publications/Gerco-thesis.pdf
+  slides: gerco-mthesis.pdf
+  abstract: "Advanced applications of automata learning demand in- creasinly complex learning algorithms that are hard to reason about. We use the language of category theory to develop a unifying framework for the study of automata learning and show that by a slight generalization minimization and confor- mance testing are covered as well. The results are expected to inspire or even form the basis of new algorithms. As an example, we instantiate the framework to set the first steps towards an algorithm that learns nominal automata."
+---
+{% assign sorted-papers = page.pubs | sort:'year' | reverse %}
+{% assign grouped-papers = sorted-papers | group_by: 'year' %}
+
+<div class="container-fluid">
+    {% for group in grouped-papers %}
+    <div class="row paper-year-row">
+        <div class="col-lg-2">
+            <h2 class="text-center">{{ group.name }}</h2>
+        </div>
+        <div class="col-lg-10">
+          {% for paper in group.items %}
+          <div class="paper">
+            <div class="paper-title">
+              {{ paper.title }}
+              <button type="button" class="btn btn-info btn-xs" data-toggle="collapse" data-target="#abstract-{{ paper.id }}">Show abstract</button>
+              {% if paper.download %}
+              <a href="{{ paper.download }}" target="_blank" data-toggle="tooltip" title="Download">
+              <span class="glyphicon glyphicon-download"></span></a>
+              {% endif %}
+              {% if paper.slides %}
+              <a href="slides/{{ paper.slides }}" target="_blank" data-toggle="tooltip" title="Slides"><span class="glyphicon glyphicon-blackboard"></span></a>
+              {% endif %}
+            </div>
+            <div id="abstract-{{ paper.id }}" class="collapse paper-abstract">
+              {{ paper.abstract }}
+            </div>
+            <div class="paper-authors">{{ paper.authors }}</div>
+            <div class="paper-where">{{ paper.where }}</div>
+          </div>
+          {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+</div>

@@ -1,0 +1,47 @@
+---
+title: News
+link: news
+layout: default
+
+news:
+- date: 2019-06-23
+  title: "<strong>Learning and Automata 2019 (LearnAut19)</strong> is happening!"
+  text: "Please consider submitting"
+  link: "https://learnaut19.github.io/"
+- date: 2017-07-24
+  title: "<strong>Learning Automata with Side-Effects</strong> has been accepted at YR-CONCUR"
+  text: "Gerco Van Heerdt will be giving the talk on <strong>September 4, 2017 at 2:30 pm</strong>"
+- date: 2017-05-25
+  title: "Matteo Sammartino gives a seminar about CALF at SREPLS 6"
+- date: 2017-05-23
+  title: "Gerco van Heerdt gives a PPLV seminar about CALF "
+- date: 2017-05-10
+  title: "Matteo Sammartino gives an invited seminar about Learning Nominal Automata at IST Austria"
+- date: 2017-03-01
+  title: "Why is Learning so Effective in Software Testing?"
+  text: "New blog post about automata learning by Joshua Moerman"
+  link: "http://automatonlearning.net/2017/03/01/why-is-learning-so-effective-in-software-testing/"
+---
+{% assign news-number = page.news | size %}
+{% assign grouped-news = page.news | group_by: 'date' %}
+
+<div class="container-fluid">
+    {% for item in page.news %}
+    <div class="row news-container">
+        <div class="col-lg-2 news-date">
+            <h4 class="text-center">{{ item.date | date: '%B %d %Y' }}</h4>
+        </div>
+        <div class="col-lg-10 news-details">
+            <div class="news-title">{{ item.title }}</div>
+            {% if item.text %}
+            <div class="news-text">{{ item.text }}</div>
+            {% endif %}
+            {% if item.link %}
+            <div class="news-link">
+            <a href="{{ item.link }}">{{ item.link }}</a>
+            </div>
+            {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+</div>

@@ -1,0 +1,94 @@
+---
+pages:
+- about
+- news
+- team
+- publications
+- talks
+- tools
+---
+<!doctype html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="style.css" />
+        <title>Categorical Automata Learning Framework — {{ page.title }}</title>
+
+        <meta property="og:title" content="Categorical Automata Learning Framework" />
+        <meta property="og:url" content="http://www.calf-project.org/" />
+        <meta property="og:image" content="http://www.calf-project.org/images/logo1024.png" />
+
+        <!-- Latest compiled and minified CSS -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax:{inlineMath: [['$','$'], ['\\(','\\)']]}});</script>
+        <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+-->
+<meta name="google-site-verification" content="1k0u-D6lwJdU4FJujP6rIblt5pILDu4drkGVc34CLCw" />
+    </head>
+    <body>
+
+
+
+            <header>
+
+                <div class="container" id="title-container">
+                  <div id="title-div">
+                   <div id="calf-logo-div">
+                     <img id="calf-logo-img" src="images/logo256.png" alt="CALF Logo">
+                   </div>
+                   <div id="calf-acronym-cont-div">
+                     <div id="calf-acronym-div">
+                       <p>Categorical</p>
+                       <p>Automata</p>
+                       <p>Learning</p>
+                       <p>Framework</p>
+                     </div>
+                   </div>
+                    <div id="calf-desc-div">
+                        <p>modular design and development of automata learning algorithms, with correctness-by-construction guarantees
+                        </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="nav-div">
+                      <!-- Collect the nav links, forms, and other content for toggling -->
+                      <div id="nav-menu-div" class="block-center">
+                          <ul class="nav nav-pills pull-left">
+                            {% for link in layout.pages %}
+                            <li{% if page.link == link %} class="active"{% endif %}><a href="{% if link == 'about' %}index{% else %}{{ link }}{% endif %}.html">{{ link | capitalize_all }}
+                              {% if link == 'news' %}
+                              <span class="badge progress-bar-danger">
+                              {% for page in site.pages %}
+                               {% if page.news %}
+                                {{ page.news | size }}
+                                {% endif %}
+                              {% endfor %}
+                              </span>
+                              {% endif %}
+                            </a>
+                          </li>
+                            {% endfor %}
+                          </ul>
+                      </div>
+                    </div>
+            </header>
+
+
+            <div id="main">
+              <div class="content">
+                      {{ content }}
+              </div>
+            </div>
+
+            <script>
+            $(document).ready(function(){
+              $('[data-toggle="tooltip"]').tooltip();
+            });
+            </script>
+    </body>
+</html>
